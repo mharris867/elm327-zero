@@ -28,7 +28,7 @@ This document details my journey in connecting a Radxa Zero single-board compute
     ```bash
     sdptool records 01:23:45:67:89:BA
     ```
-    Look for a section related to Serial Port Profile (SPP) and note the "Channel" value. This was a key piece of information that took time to uncover.
+    Look for a section related to the "Channel" value. This was a key piece of information that took time to uncover.
 
 5.  **Binding the RFCOMM Channel to a Serial Port:**
     The `rfcomm` command is used to create a virtual serial port (`/dev/rfcomm0`) linked to the ELM327's Bluetooth address and the channel number you found. Replace `2` with your actual channel number:
@@ -41,7 +41,7 @@ This document details my journey in connecting a Radxa Zero single-board compute
     ```bash
     sudo nano /etc/rc.local
     ```
-    Add the `rfcomm bind` line (from step 5) before the `exit 0` line. Save and exit the file.
+    Add the `rfcomm bind` line (from step 5 without the sudo) before the `exit 0` line. Save and exit the file.
 
 7.  **Verifying the Connection:**
     You can use the `screen` utility to directly interact with the newly created serial port:
