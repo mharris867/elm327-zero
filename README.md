@@ -13,4 +13,4 @@ There is nothing but bad information on connecting a single board computer (Rasp
 5. sudo rfcomm bind 0 01:23:45:67:89:BA 2 # command that needs to be run to create /dev/rfcomm0 for communication. 0 = rfcomm0 and the 2 at the end is my channel from the above command.
 6. sudo nano /etc/rc.local # and add the rfcomm bind 0 01:23:45:67:89:BA 2 from above to bind on next boot of device.
 7. screen /dev/rfcomm0 # this connects to the serialport
-- atz # atz command inside screen tests connectivity and displays the version of the elm327
+- atz # typing atz enter inside screen tests connectivity and displays the version of the elm327. OKELM327 v2.1
