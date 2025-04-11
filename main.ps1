@@ -80,7 +80,7 @@ function Format-Output {
         $startIndex = $Key.IndexOf('[')
         $textPart = ($Key.Substring(0, $startIndex)).Trim()
         $unitPart = ($Key.Substring($startIndex)).Trim()
-        $full_text = "$textPart: $Value"
+        $full_text = '$textPart: $($Value)'
         if ($Value -ne "NO DATA" -and $Value -ne "CAN ERROR") {
             $full_text += " $unitPart"
         }
@@ -192,7 +192,7 @@ function Format-Output {
     if ($ser -ne $null -and $ser.IsOpen) {
         $ser.Close()
     }
-}
+
 
 # Assuming you have a PowerShell script named 'mapping.ps1' that provides the mapping functionality
 # This script should either:
