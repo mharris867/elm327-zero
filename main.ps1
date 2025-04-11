@@ -19,7 +19,7 @@ function Query-SerialPort {
         [Parameter(Mandatory=$true)]
         [string]$Code
     )
-
+    Write-Host "Is the Serial Port open: " $SerialPort.IsOpen
     $SerialPort.Write("$Code`r")
     $safety = 0
     $running = $true
